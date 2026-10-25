@@ -11,20 +11,20 @@ import androidx.compose.runtime.Composable
  * `primary` ana vurgu, `surface` kart zemini, `onSurface` o zemindeki yazı rengidir.
  */
 private val LightColors = lightColorScheme(
-    primary = Teal40,
-    onPrimary = Neutral99,
-    primaryContainer = Teal90,
-    onPrimaryContainer = Teal10,
-    secondary = Amber40,
-    secondaryContainer = Amber90,
-    background = Neutral99,
-    onBackground = Neutral10,
-    surface = Neutral99,
-    onSurface = Neutral10,
-    surfaceVariant = NeutralVariant90,
-    onSurfaceVariant = NeutralVariant30,
-    surfaceContainer = Neutral95,
-    error = Red40
+    primary = Teal40,                    //Ana Vurgu Rengi
+    onPrimary = Neutral99,               //Ana Vurgu Üzeri Rengi
+    primaryContainer = Teal90,           //Ana Vurgu Kutusu Rengi
+    onPrimaryContainer = Teal10,         //Ana Vurgu Kutusu Üzeri Rengi
+    secondary = Amber40,                 //İkincil Vurgu Rengi
+    secondaryContainer = Amber90,        //İkincil Vurgu Kutusu Rengi
+    background = Neutral99,              //Ekran Arka Plan Rengi
+    onBackground = Neutral10,            //Ekran Arka Planı Üzeri Rengi
+    surface = Neutral99,                 //Yüzey / Kart Rengi
+    onSurface = Neutral10,               //Yüzey Üzeri Rengi
+    surfaceVariant = NeutralVariant90,   //Alternatif Yüzey Rengi
+    onSurfaceVariant = NeutralVariant30, //Alternatif Yüzey Üzeri Rengi
+    surfaceContainer = Neutral95,        //Yüzey Kapsayıcısı Rengi
+    error = Red40                        //Hata Rengi
 )
 
 /** Koyu tema paleti. Aynı roller, koyu zemine uygun tonlarla. */
@@ -50,7 +50,7 @@ private val DarkColors = darkColorScheme(
  */
 @Composable
 fun HavaTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
-    MaterialTheme(
+    MaterialTheme( //ana tema yöneticisi
         colorScheme = if (darkTheme) DarkColors else LightColors,
         typography = HavaTypography,
         content = content

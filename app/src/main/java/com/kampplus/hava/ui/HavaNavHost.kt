@@ -1,6 +1,7 @@
 package com.kampplus.hava.ui
 
 import android.net.Uri
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -34,7 +35,8 @@ fun HavaNavHost(modifier: Modifier = Modifier, navController: NavHostController 
     ) {
         composable(CITY_ROUTE) {
             CityRoute(
-                onCityClick = { city -> navController.navigate(forecastRoute(city)) }
+                onCityClick = { city -> navController.navigate(forecastRoute(city)) },
+                modifier = Modifier.fillMaxSize()
             )
         }
         composable(
@@ -59,7 +61,10 @@ fun HavaNavHost(modifier: Modifier = Modifier, navController: NavHostController 
                 }
             )
         ) {
-            ForecastRoute(onBack = { navController.popBackStack() })
+            ForecastRoute(
+                onBack = { navController.popBackStack() },
+                modifier = Modifier.fillMaxSize()
+            )
         }
     }
 }
